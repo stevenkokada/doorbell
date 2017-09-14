@@ -8,14 +8,14 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongodb": "^2.2.30",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "play-sound": "^1.1.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
-
   },
   "repository": {
     "type": "git",

@@ -1,10 +1,9 @@
 var express = require('express');
+var bodyParser = require('body-parser')
+var path = require('path')
+var player = require('play-sound')(opts = {})
 
 
-
-
-
-var ARTICLES_COLLECTION = "articles";
 
 
 var app = express();
@@ -31,14 +30,25 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 
-app.post("/api/bell", function(req, res){
+app.get("/api/bell2", function(req,res){
+	console.log("got get");
+	player.play('bell.mp3', function(err){
+		if (err) throw err
+	})
 
+	res.send("ok");
+});
+
+app.post("/api/bell", function(req, res){
+	console.log("got post");
 	var name = req.body.name;
 
-	// make sound
 
-	var audio = new Audio("bell.mp3")
-	audio.play()
+	player.play('bell.mp3', function(err){
+		if (err) throw err
+	})
+
+	res.send("ok");
 
 
 });
