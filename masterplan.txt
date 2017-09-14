@@ -1,0 +1,15 @@
+Server on Pi
+https://readwrite.com/2014/06/27/raspberry-pi-web-server-website-hosting/
+http://thisdavej.com/beginners-guide-to-installing-node-js-on-a-raspberry-pi/
+
+Pi <--> Bluetooth Speakers
+https://www.raspberrypi.org/magpi/bluetooth-audio-raspberry-pi-3/
+
+-button on website makes http request through mobile browser @ pi-url
+-on pi, nodejs to process http request and play speaker
+
+9/14/17
+
+-use laptop instead
+-nodejs backend + react frontend
+-store name to announce whos there
