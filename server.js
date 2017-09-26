@@ -18,6 +18,26 @@ var server = app.listen(process.env.PORT || 8080, function(){
 
 
 
+var dash_button = require('node-dash-button');
+var dash = dash_button('78:e1:03:45:8a:07', null, null, 'all');
+var http = require('http');
+
+var options = {
+    host: '62b15df8.ngrok.io',
+    path: '/bell'
+};
+
+
+dash.on('detected', function() {
+    console.log('Button pushed!');
+    var req = http.get(options, function(res) {
+        console.log('sending get');
+        console.log('RES: ' + res);
+    });
+    req.on('error', function(e) {
+        console.log('error');
+    });
+});
 
 function handleError(res, reason, message, code){
 	console.log("ERROR: " + reason);
