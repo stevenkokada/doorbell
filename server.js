@@ -30,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 
+app.get("/", function(req,res){
+	res.status(403).json({"error": "Not authorized"})
+});
+
+
 app.get("/api/bell2", function(req,res){
 	console.log("got get");
 	player.play('bell.mp3', function(err){
