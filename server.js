@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 
-app.get("/api/bell2", function(req,res){
+app.get("/bell", function(req,res){
 	console.log("got get");
 	player.play('bell.mp3', function(err){
 		if (err) throw err
